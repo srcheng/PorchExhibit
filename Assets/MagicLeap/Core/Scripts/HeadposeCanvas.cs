@@ -24,6 +24,12 @@ namespace UnityEngine.XR.MagicLeap
         #region Public Variables
         [Tooltip("The distance from the camera that this object should be placed.")]
         public float CanvasDistance = 1.5f;
+
+        [Tooltip("The speed at which this object changes its position.")]
+        public float PositionLerpSpeed = 5f;
+
+        [Tooltip("The speed at which this object changes its rotation.")]
+        public float RotationLerpSpeed = 5f;
         #endregion
 
         #region Private Varibles
