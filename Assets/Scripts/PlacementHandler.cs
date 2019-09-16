@@ -32,7 +32,7 @@ public class PlacementHandler : MonoBehaviour
 
     private bool _placing = true;
 
-    private HeadposeCanvas _hpCanvas;
+    private HeadposeCanvasPE _hpCanvas;
 
     private enum touchMode
     {
@@ -72,7 +72,7 @@ public class PlacementHandler : MonoBehaviour
         _instructions.text = _modeText[0] + _moveText;
 
         GameObject canvas = GameObject.Find("HeadposeCanvas");
-        _hpCanvas = canvas.GetComponent<HeadposeCanvas>();
+        _hpCanvas = canvas.GetComponent<HeadposeCanvasPE>();
     }
 
     void Update()

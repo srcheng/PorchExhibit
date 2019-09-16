@@ -307,8 +307,8 @@ GameObject:
   - component: {fileID: 1015992579}
   - component: {fileID: 1015992578}
   - component: {fileID: 1015992577}
-  - component: {fileID: 1015992576}
   - component: {fileID: 1015992575}
+  - component: {fileID: 1015992576}
   m_Layer: 5
   m_Name: HeadposeCanvas
   m_TagString: Untagged
@@ -333,10 +333,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1015992574}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a955ee40b78a2c489d4859b55f1f5e3, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d30567d0b278c94ea49f282a9d52bb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   CanvasDistance: 1.5
+  PositionLerpSpeed: 5
+  RotationLerpSpeed: 5
 --- !u!114 &1015992577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -617,7 +619,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _controllerConnectionHandler: {fileID: 114463423317092174}
-  _buildingModel: {fileID: 3005828533223522203, guid: 0a93812f109eeb4478d2287134412086,
+  _buildingModel: {fileID: 4415171978616631077, guid: 38947f9668b55fd4ba9f461d0d39cf63,
     type: 3}
   _instructions: {fileID: 149459563}
   _inputModule: {fileID: 1707735189}
