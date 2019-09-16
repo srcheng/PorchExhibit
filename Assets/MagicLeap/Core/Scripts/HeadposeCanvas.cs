@@ -80,17 +80,6 @@ namespace UnityEngine.XR.MagicLeap
             Quaternion rotTo = Quaternion.LookRotation(transform.position - _camera.transform.position);
             transform.rotation = Quaternion.Slerp(transform.rotation, rotTo, rotSpeed);
         }
-
-        public void MoveCanvas()
-        {
-            // Move the object CanvasDistance units in front of the camera.
-            Vector3 posTo = _camera.transform.position + (_camera.transform.forward * CanvasDistance);
-            transform.position = posTo;
-
-            // Rotate the object to face the camera.
-            Quaternion rotTo = Quaternion.LookRotation(transform.position - _camera.transform.position);
-            transform.rotation = rotTo;
-        }
         #endregion
     }
 }
