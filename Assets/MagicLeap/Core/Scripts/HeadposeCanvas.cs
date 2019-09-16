@@ -24,6 +24,12 @@ namespace UnityEngine.XR.MagicLeap
         #region Public Variables
         [Tooltip("The distance from the camera that this object should be placed.")]
         public float CanvasDistance = 1.5f;
+
+        [Tooltip("The speed at which this object changes its position.")]
+        public float PositionLerpSpeed = 5f;
+
+        [Tooltip("The speed at which this object changes its rotation.")]
+        public float RotationLerpSpeed = 5f;
         #endregion
 
         #region Private Varibles
@@ -64,9 +70,16 @@ namespace UnityEngine.XR.MagicLeap
         /// </summary>
         void Update()
         {
-            
+            // Move the object CanvasDistance units in front of the camera.
+            float posSpeed = Time.deltaTime * PositionLerpSpeed;
+            Vector3 posTo = _camera.transform.position + (_camera.transform.forward * CanvasDistance);
+            transform.position = Vector3.SlerpUnclamped(transform.position, posTo, posSpeed);
+
+            // Rotate the object to face the camera.
+            float rotSpeed = Time.deltaTime * RotationLerpSpeed;
+            Quaternion rotTo = Quaternion.LookRotation(transform.position - _camera.transform.position);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotTo, rotSpeed);
         }
-        #endregion
 
         public void MoveCanvas()
         {
@@ -78,5 +91,6 @@ namespace UnityEngine.XR.MagicLeap
             Quaternion rotTo = Quaternion.LookRotation(transform.position - _camera.transform.position);
             transform.rotation = rotTo;
         }
+        #endregion
     }
 }

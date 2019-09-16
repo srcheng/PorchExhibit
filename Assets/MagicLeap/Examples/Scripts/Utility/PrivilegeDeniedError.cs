@@ -39,6 +39,8 @@ namespace UnityEngine.XR.MagicLeap
             GetComponent<Canvas>().worldCamera = Camera.main;
             HeadposeCanvas headposeCanvas = gameObject.AddComponent<HeadposeCanvas>();
             headposeCanvas.CanvasDistance = 1.0f;
+            headposeCanvas.PositionLerpSpeed = 1.0f;
+            headposeCanvas.RotationLerpSpeed = 1.0f;
         }
         #endregion
 
