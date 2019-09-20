@@ -52,15 +52,6 @@ public class HeadposeCanvasPE : MonoBehaviour
     /// </summary>
     void Update()
     {
-        // Move the object CanvasDistance units in front of the camera.
-        float posSpeed = Time.deltaTime * PositionLerpSpeed;
-        Vector3 posTo = _camera.transform.position + (_camera.transform.forward * CanvasDistance);
-        transform.position = Vector3.SlerpUnclamped(transform.position, posTo, posSpeed);
-
-        // Rotate the object to face the camera.
-        float rotSpeed = Time.deltaTime * RotationLerpSpeed;
-        Quaternion rotTo = Quaternion.LookRotation(transform.position - _camera.transform.position);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotTo, rotSpeed);
     }
     #endregion
 
